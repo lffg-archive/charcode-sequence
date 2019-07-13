@@ -1,6 +1,6 @@
 {
   "name": "charcode-sequence",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Charcode sequence encoder / decoder.",
   "main": "./dist/charcode-sequence-cjs.js",
   "module": "./dist/charcode-sequence.mjs",
