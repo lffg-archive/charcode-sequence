@@ -2,8 +2,19 @@
   "name": "charcode-sequence",
   "version": "1.0.0",
   "description": "Charcode sequence encoder / decoder.",
-  "main": "build/charcode-sequence-cjs.js",
+  "main": "./dist/charcode-sequence-cjs.js",
+  "module": "./dist/charcode-sequence.mjs",
+  "types": "./dist/charcode-sequence.d.ts",
   "repository": "https://github.com/lffg/charcode-sequence",
   "author": "Luiz Felipe Gonçalves <https://github.com/lffg>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "del dist && rollup -c"
+  },
+  "devDependencies": {
+    "del-cli": "^2.0.0",
+    "rollup": "^1.16.7",
+    "rollup-plugin-typescript2": "^0.22.0",
+    "typescript": "^3.5.3"
+  }
 }
