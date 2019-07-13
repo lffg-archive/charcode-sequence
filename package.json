@@ -1,0 +1,9 @@
+{
+  "name": "charcode-sequence",
+  "version": "1.0.0",
+  "description": "Charcode sequence encoder / decoder.",
+  "main": "build/charcode-sequence-cjs.js",
+  "repository": "https://github.com/lffg/charcode-sequence",
+  "author": "Luiz Felipe Gonçalves <https://github.com/lffg>",
+  "license": "MIT"
+}
