@@ -1,5 +1,5 @@
 {
-  "name": "charcode-sequence",
+  "name": "@lffg/charcode-sequence",
   "version": "1.0.0",
   "description": "Charcode sequence encoder / decoder.",
   "main": "./dist/charcode-sequence-cjs.js",
@@ -27,5 +27,8 @@
     "rollup-plugin-typescript2": "^0.22.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
