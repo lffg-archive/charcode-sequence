@@ -2,19 +2,20 @@
   "name": "@lffg/charcode-sequence",
   "version": "1.0.0",
   "description": "Charcode sequence encoder / decoder.",
-  "main": "./dist/charcode-sequence-cjs.js",
-  "module": "./dist/charcode-sequence.mjs",
-  "types": "./dist/charcode-sequence.d.ts",
+  "main": "./build/charcode-sequence-cjs.js",
+  "module": "./build/charcode-sequence.mjs",
+  "types": "./build/charcode-sequence.d.ts",
   "repository": "https://github.com/lffg/charcode-sequence",
   "author": "Luiz Felipe Gonçalves <https://github.com/lffg>",
   "license": "MIT",
   "scripts": {
-    "build": "del dist && rollup -c",
+    "build": "del build && rollup -c",
     "lint": "eslint . --ext .jsx,.js,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "check:ts": "tsc --noEmit --skipLibCheck",
     "check:all": "yarn lint && yarn check:ts",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",

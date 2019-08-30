@@ -1,10 +1,16 @@
 import typescript from 'rollup-plugin-typescript2';
+import pkg from './package.json';
 
 export default {
   input: 'src/charcode-sequence.ts',
-  plugins: [typescript({ clean: true })],
+  plugins: [
+    typescript({
+      rollupCommonJSResolveHack: true,
+      clean: true
+    })
+  ],
   output: [
-    { file: 'dist/charcode-sequence-cjs.js', format: 'cjs' },
-    { file: 'dist/charcode-sequence.mjs', format: 'es' }
+    { file: pkg.main, format: 'cjs' },
+    { file: pkg.module, format: 'es' }
   ]
 };

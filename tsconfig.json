@@ -1,7 +1,8 @@
 {
-  "input": ["src"],
+  "include": ["src"],
   "exclude": ["node_modules"],
   "compilerOptions": {
+    "outDir": "dist",
     "noEmit": true,
     "target": "es2015",
     "module": "esnext",
