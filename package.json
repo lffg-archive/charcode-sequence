@@ -13,8 +13,8 @@
     "lint": "eslint . --ext .jsx,.js,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "check:ts": "tsc --noEmit --skipLibCheck",
-    "check:all": "yarn lint && yarn check:ts",
     "test": "jest",
+    "check:all": "yarn lint && yarn check:ts && yarn test",
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
