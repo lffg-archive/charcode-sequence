@@ -18,10 +18,10 @@ yarn add @lffg/charcode-sequence
 ## Basic Usage
 
 ```typescript
-import { encode, decode } from '@lffg/charcode-sequence'
+import { encode, decode } from '@lffg/charcode-sequence';
 
-encode('Luiz') // [76, 117, 105, 122]
-decode([76, 117, 105, 122]) // "Luiz"
+encode('Luiz'); // [76, 117, 105, 122]
+decode([76, 117, 105, 122]); // "Luiz"
 ```
 
 ## Authors and License

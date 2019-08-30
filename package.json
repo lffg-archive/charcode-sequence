@@ -9,25 +9,56 @@
   "author": "Luiz Felipe Gonçalves <https://github.com/lffg>",
   "license": "MIT",
   "scripts": {
-    "build": "del build && rollup -c",
-    "lint": "eslint . --ext .jsx,.js,.ts,.tsx",
-    "lint:fix": "yarn lint --fix",
-    "check:ts": "tsc --noEmit --skipLibCheck",
+    "c": "git-cz",
+    "format:raw": "prettier --write",
+    "format": "yarn format:raw '**/*.{js,jsx,ts,tsx,json,vue,css,scss,less,graphql,gql,md,mdx,yml,yaml}'",
+    "lint": "yarn lint:raw .",
+    "lint:fix": "yarn lint:raw --fix .",
+    "lint:raw": "eslint --ext .js,.jsx,.ts,.tsx --max-warnings=0",
+    "build-dist": "yarn es --all build-dist",
+    "dev:web": "yarn es server,web dev",
     "test": "jest",
+    "check:ts": "tsc --noEmit --skipLibCheck",
     "check:all": "yarn lint && yarn check:ts && yarn test",
+    "build": "del build && rollup -c",
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "@types/node": "^12.6.2",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
     "del-cli": "^2.0.0",
     "eslint": "5.x",
     "eslint-config-lffg": "^1.8.0",
+    "husky": "^3.0.4",
     "jest": "^24.8.0",
+    "lint-staged": "^9.2.5",
+    "prettier": "^1.18.2",
     "rollup": "^1.16.7",
     "rollup-plugin-typescript2": "^0.22.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn check:all"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,vue,css,scss,less,graphql,gql,md,mdx,yml,yaml}": [
+      "yarn format:raw",
+      "git add"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "yarn lint:raw --ignore-pattern '!.prettierrc.js'",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "publishConfig": {
     "access": "public"
