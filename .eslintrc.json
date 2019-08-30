@@ -1,6 +1,3 @@
 {
-  "extends": ["lffg"],
-  "rules": {
-    "import/no-default-export": "off"
-  }
+  "extends": ["lffg"]
 }

@@ -1,38 +1,31 @@
-# `faker-create-factory`
+# `@lffg/charcode-sequence`
 
-🏭 Factory creator utility to Faker.js
+📜 Character code sequence encoder and decoder.
 
-[![NPM](https://img.shields.io/npm/v/faker-create-factory.svg?logo=npm)](https://npmjs.org/package/faker-create-factory)
+[![Build Status](https://circleci.com/gh/lffg/charcode-sequence.svg?style=svg)](https://circleci.com/gh/lffg/charcode-sequence)
+[![NPM](https://img.shields.io/npm/v/@lffg/charcode-sequence.svg?logo=npm)](https://npmjs.org/package/@lffg/charcode-sequence)
 ![Uses TypeScript](https://img.shields.io/badge/Uses-Typescript-294E80.svg)
 
 ## Installing
 
 ```shell
-yarn add faker faker-create-factory
+yarn add @lffg/charcode-sequence
 
 # If you're using NPM:
-# npm install faker faker-create-factory
+# npm install @lffg/charcode-sequence --save
 ```
 
 ## Basic Usage
 
 ```typescript
-import { createFactory } from 'faker';
+import { encode, decode } from '@lffg/charcode-sequence'
 
-export const UserFactory = createFactory<User>((faker) => ({
-  id: faker.random.uuid(),
-  email: faker.internet.email(),
-  username: faker.internet.userName(),
-  password: '123'
-}));
-
-// And the use it as:
-UserFactory.generate(); // User
-UserFactory.generateMany(5); // Array<User>
+encode('Luiz') // [76, 117, 105, 122]
+decode([76, 117, 105, 122]) // "Luiz"
 ```
 
 ## Authors and License
 
-[lffg](https://github.com/lffg) and [contributors](https://github.com/lffg/faker-create-factory/graphs/contributors).
+[lffg](https://github.com/lffg) and [contributors](https://github.com/lffg/charcode-sequence/graphs/contributors).
 
-MIT License, see the included [MIT](https://github.com/lffg/faker-create-factory/blob/master/LICENSE) file.
+MIT License, see the included [MIT](https://github.com/lffg/charcode-sequence/blob/master/LICENSE) file.
