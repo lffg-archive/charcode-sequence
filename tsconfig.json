@@ -6,6 +6,7 @@
     "target": "es2015",
     "module": "esnext",
     "strict": true,
-    "declaration": true
+    "declaration": true,
+    "esModuleInterop": true
   }
 }
