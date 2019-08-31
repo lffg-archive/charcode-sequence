@@ -1,6 +1,6 @@
 {
   "name": "@lffg/charcode-sequence",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Charcode sequence encoder / decoder.",
   "main": "./build/charcode-sequence-cjs.js",
   "module": "./build/charcode-sequence.mjs",
